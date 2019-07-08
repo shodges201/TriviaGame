@@ -10,7 +10,13 @@ var answerList = [["Monster's Inc.", "Toy Story", "A Bug's Life", "Snow White", 
 var gifList = ['<iframe src="https://giphy.com/embed/Rj51H8PkfX6HC" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>', '<iframe src="https://giphy.com/embed/iUYwiYC4K2gF2" width="480" height="361" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>', '<iframe src="https://giphy.com/embed/AxhxIcTMEMqR2" width="480" height="265" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>', '<iframe src="https://giphy.com/embed/l1J3D78s4USLhASU8" width="480" height="302" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>'];
 var questionNum = 0;
 
-start();
+var startBtn = $("<h1>").addClass("time redo").attr("id", "startBtn").text("Start Game");
+$("#qa").append(startBtn);
+
+$(document).on("click", "#startBtn", function(){
+    console.log("clicked button");
+    start();
+})
 
 function start(){
     if(questionNum !== questionList.length){
@@ -42,6 +48,7 @@ function timer(){
 
 
 function question(){
+    $("#displayTime").text("30 seconds");
     $("#qa").empty();
     var ansList = answerList[questionNum];
     var newQuestion = $("<p>").addClass("time").text(questionList[questionNum]);
@@ -106,8 +113,20 @@ function gameOver(){
     var wins = $("<h1>").addClass("time").text("Correct Answers: " + correctCount);
     var losses = $("<h1>").addClass("time").text("Incorrect Answers: " + wrongCount);
     var timeOut = $("<h1>").addClass("time").text("Unanswered: " + timeCount);
-    $("#qa").append(endText).append(wins).append(losses).append(timeOut);
+    var startOver = $("<h1>").addClass("time redo").attr("id", "startOver").text("Start Over?");
+    $("#qa").append(endText).append(wins).append(losses).append(timeOut).append(startOver);
 }
+
+$(document).on("click", "#startOver", function(){
+    time = 30;
+    correctCount = 0;
+    wrongCount = 0;
+    timeCount = 0;
+    questionNum = 0;
+    $("#qa").empty();
+    $("#displayTime").text("30 seconds");
+    start();
+})
 
 
 

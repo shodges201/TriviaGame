@@ -16,12 +16,32 @@
     text-align: center;
 }
 
+.answer{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.answer:hover{
+    background-color: lightskyblue;
+    border: 2px solid black;
+}
+
 .gif{
     margin: auto;
     margin-bottom: 30px;
     display: block;
 }
 
-#displayTime{
-    
+.redo{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.redo:hover{
+    background-color: lightskyblue;
+    border: 2px solid black;
 }
