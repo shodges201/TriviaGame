@@ -45,3 +45,7 @@
     background-color: lightskyblue;
     border: 2px solid black;
 }
+
+body{
+    background-image: url(../images/film.jpg);
+}
