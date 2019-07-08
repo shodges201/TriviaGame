@@ -1,0 +1,27 @@
+#container{
+    height: 90%;
+    width: 80%;
+    margin: auto;
+    background-color: rgb(245, 245, 98);
+}  
+
+#heading{
+    color: blue;
+    text-align: center;
+    font-size: 70px;
+}
+
+.time{
+    font-size: 30px;
+    text-align: center;
+}
+
+.gif{
+    margin: auto;
+    margin-bottom: 30px;
+    display: block;
+}
+
+#displayTime{
+    
+}
