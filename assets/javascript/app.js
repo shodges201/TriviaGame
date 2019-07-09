@@ -10,6 +10,7 @@ var answerList = [["Monster's Inc.", "Toy Story", "A Bug's Life", "Snow White", 
 var gifList = ['<iframe src="https://giphy.com/embed/Rj51H8PkfX6HC" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>', '<iframe src="https://giphy.com/embed/iUYwiYC4K2gF2" width="480" height="361" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>', '<iframe src="https://giphy.com/embed/AxhxIcTMEMqR2" width="480" height="265" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>', '<iframe src="https://giphy.com/embed/l1J3D78s4USLhASU8" width="480" height="302" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>'];
 var questionNum = 0;
 
+
 var startBtn = $("<h1>").addClass("time redo").attr("id", "startBtn").text("Start Game");
 $("#qa").append(startBtn);
 
