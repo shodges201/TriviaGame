@@ -56,8 +56,14 @@ function question(){
     $("#qa").append(newQuestion);
     var correct = ansList[ansList.length - 1];
     for(var i = 0; i < ansList.length - 1; i++){
-        if(i === correct){
+        if(i === correct && i !== ansList.length-2){
             var answer = $("<h1>").addClass("time answer").text(ansList[i]).val("1");
+        }
+        else if(i === correct && i === ansList.length-2){
+            var answer = $("<h1>").addClass("time bottom").text(ansList[i]).val("1");
+        }
+        else if(i !== correct && i=== ansList.length-2){
+            var answer = $("<h1>").addClass("time bottom").text(ansList[i]).val("0");
         }
         else{
             var answer = $("<h1>").addClass("time answer").text(ansList[i]).val("0");
@@ -92,7 +98,10 @@ function questionAnswered(ans){
     setTimeout(start, 3000);
 }
 
-$(document).on("click", ".answer", function(){
+$(document).on("click", ".answer", answerClicked);
+$(document).on("click", ".bottom", answerClicked);
+
+function answerClicked(){
     console.log("clicked");
     console.log($(this).val());
     clearInterval(intervalID);
@@ -106,7 +115,7 @@ $(document).on("click", ".answer", function(){
         questionAnswered(0);
     }
     running = false;
-})
+}
 
 function gameOver(){
     $("#qa").empty();
